@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <%= link_to "ホーム", root_path %>
+    <%= link_to "ホーム", root_path %> <br>
     <% if user_signed_in? %>
-    <p><p>こんにちわ, <%= current_user.email %></p>
+    <p>こんにちわ, <%= link_to current_user.email, users_show_path %></p><br>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
     <%= link_to "サインイン ", new_user_session_path %>
